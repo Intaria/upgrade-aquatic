@@ -47,7 +47,6 @@ public final class UALootModifierProvider extends LootModifierProvider {
 				.addModifier(new LootPoolEntriesModifier(
 						false,
 						0,
-						LootItem.lootTableItem(UABlocks.DRIFTWOOD_LOG.get()).setWeight(10).apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))).build(),
 						LootItem.lootTableItem(UABlocks.BLUE_PICKERELWEED.get()).setWeight(12).when(inSwamp.or(inRiver)).build(),
 						LootItem.lootTableItem(UABlocks.PURPLE_PICKERELWEED.get()).setWeight(12).when(inSwamp.or(inRiver)).build()
 				));

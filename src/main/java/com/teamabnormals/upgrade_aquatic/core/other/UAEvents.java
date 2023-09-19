@@ -201,13 +201,11 @@ public class UAEvents {
 	public static void onWandererTradesEvent(WandererTradesEvent event) {
 		TradeUtil.addWandererTrades(event, new BlueprintTrade(1, UABlocks.BEACHGRASS.get().asItem(), 1, 12, 1), new BlueprintTrade(1, UABlocks.WHITE_SEAROCKET.get().asItem(), 1, 8, 1), new BlueprintTrade(1, UABlocks.PINK_SEAROCKET.get().asItem(), 1, 8, 1), new BlueprintTrade(1, UABlocks.BLUE_PICKERELWEED.get().asItem(), 1, 8, 1), new BlueprintTrade(1, UABlocks.PURPLE_PICKERELWEED.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.FINGER_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.ACAN_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.BRANCH_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.PILLOW_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.SILK_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.PETAL_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.MOSS_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.ROCK_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.STAR_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(3, UABlocks.CHROME_CORAL_BLOCK.get().asItem(), 1, 8, 1), new BlueprintTrade(5, UABlocks.EMBEDDED_AMMONITE.get().asItem(), 1, 5, 1));
 
-		TradeUtil.addRareWandererTrades(event, new BlueprintTrade(2, UABlocks.DRIFTWOOD_LOG.get().asItem(), 1, 16, 1), new BlueprintTrade(5, UAItems.PIKE_BUCKET.get(), 1, 4, 1), new BlueprintTrade(5, UAItems.LIONFISH_BUCKET.get(), 1, 4, 1), new BlueprintTrade(5, UAItems.NAUTILUS_BUCKET.get(), 1, 4, 1));
+		TradeUtil.addRareWandererTrades(event, new BlueprintTrade(5, UAItems.PIKE_BUCKET.get(), 1, 4, 1), new BlueprintTrade(5, UAItems.LIONFISH_BUCKET.get(), 1, 4, 1), new BlueprintTrade(5, UAItems.NAUTILUS_BUCKET.get(), 1, 4, 1));
 	}
 
 	@SubscribeEvent
 	public static void onVillagerTradesEvent(VillagerTradesEvent event) {
-		TradeUtil.addVillagerTrades(event, VillagerProfession.FARMER, TradeUtil.APPRENTICE, new BlueprintTrade(1, UAItems.MULBERRY.get(), 5, 16, 5));
-
 		if (event.getType().equals(VillagerProfession.FISHERMAN)) {
 			TradeUtil.addVillagerTrades(event, TradeUtil.APPRENTICE, new BlueprintTrade(new ItemStack(UAItems.PERCH.get(), 6), new ItemStack(Items.EMERALD), new ItemStack(UAItems.COOKED_PERCH.get(), 6), 16, 5, 0.05F));
 

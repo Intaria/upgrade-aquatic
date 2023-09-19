@@ -64,46 +64,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "upgrade_aquatic:mulberry": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "upgrade_aquatic:mulberry"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "upgrade_aquatic:mulberry_bread": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "upgrade_aquatic:mulberry_bread"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "upgrade_aquatic:mulberry_jam_bottle": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "upgrade_aquatic:mulberry_jam_bottle"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "upgrade_aquatic:mulberry_pie": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "upgrade_aquatic:mulberry_pie"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "upgrade_aquatic:perch": {
             "conditions": {
               "item": {
@@ -149,18 +109,6 @@
           ],
           [
             "upgrade_aquatic:cooked_perch"
-          ],
-          [
-            "upgrade_aquatic:mulberry"
-          ],
-          [
-            "upgrade_aquatic:mulberry_jam_bottle"
-          ],
-          [
-            "upgrade_aquatic:mulberry_bread"
-          ],
-          [
-            "upgrade_aquatic:mulberry_pie"
           ]
         ],
         "should_replace_requirements": false

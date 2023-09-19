@@ -6,7 +6,6 @@ import com.teamabnormals.blueprint.core.util.registry.AbstractSubRegistryHelper;
 import com.teamabnormals.upgrade_aquatic.common.item.*;
 import com.teamabnormals.upgrade_aquatic.core.UpgradeAquatic;
 import com.teamabnormals.upgrade_aquatic.core.registry.util.UAItemSubRegistryHelper;
-import com.teamabnormals.upgrade_aquatic.integration.boatload.UABoatTypes;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -27,13 +26,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class UAItems {
 	public static final UAItemSubRegistryHelper HELPER = UpgradeAquatic.REGISTRY_HELPER.getItemSubHelper();
 
-	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> DRIFTWOOD_BOAT = HELPER.createBoatAndChestBoatItem("driftwood", UABlocks.DRIFTWOOD_PLANKS);
-	public static final RegistryObject<Item> DRIFTWOOD_FURNACE_BOAT = HELPER.createItem("driftwood_furnace_boat", ModList.get().isLoaded("boatload") ? UABoatTypes.DRIFTWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
-	public static final RegistryObject<Item> LARGE_DRIFTWOOD_BOAT = HELPER.createItem("large_driftwood_boat", ModList.get().isLoaded("boatload") ? UABoatTypes.LARGE_DRIFTWOOD_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
-	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> RIVER_BOAT = HELPER.createBoatAndChestBoatItem("river", UABlocks.RIVER_PLANKS);
-	public static final RegistryObject<Item> RIVER_FURNACE_BOAT = HELPER.createItem("river_furnace_boat", ModList.get().isLoaded("boatload") ? UABoatTypes.RIVER_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
-	public static final RegistryObject<Item> LARGE_RIVER_BOAT = HELPER.createItem("large_river_boat", ModList.get().isLoaded("boatload") ? UABoatTypes.LARGE_RIVER_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
-
 	public static final RegistryObject<Item> NAUTILUS_BUCKET = HELPER.createItem("nautilus_bucket", () -> new BlueprintMobBucketItem(UAEntityTypes.NAUTILUS::get, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 	public static final RegistryObject<Item> PIKE_BUCKET = HELPER.createItem("pike_bucket", () -> new PikeBucketItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 	public static final RegistryObject<Item> LIONFISH_BUCKET = HELPER.createItem("lionfish_bucket", () -> new BlueprintMobBucketItem(UAEntityTypes.LIONFISH::get, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
@@ -52,22 +44,12 @@ public class UAItems {
 	public static final RegistryObject<Item> PERCH = HELPER.createItem("perch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.PERCH)));
 	public static final RegistryObject<Item> COOKED_PERCH = HELPER.createItem("cooked_perch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.COOKED_PERCH)));
 
-	public static final RegistryObject<Item> MULBERRY = HELPER.createItem("mulberry", () -> new ItemNameBlockItem(UABlocks.MULBERRY_VINE.get(), new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.MULBERRY)));
-	public static final RegistryObject<Item> MULBERRY_JAM_BOTTLE = HELPER.createItem("mulberry_jam_bottle", () -> new MulberryJamBottleItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE).food(Foods.MULBERRY_JAM)));
-	public static final RegistryObject<Item> MULBERRY_BREAD = HELPER.createItem("mulberry_bread", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.MULBERRY_BREAD)));
-	public static final RegistryObject<Item> MULBERRY_PIE = HELPER.createItem("mulberry_pie", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.MULBERRY_PIE)));
-
 	public static final RegistryObject<ForgeSpawnEggItem> NAUTILUS_SPAWN_EGG = HELPER.createSpawnEggItem("nautilus", UAEntityTypes.NAUTILUS::get, 14596231, 16744272);
 	public static final RegistryObject<ForgeSpawnEggItem> PIKE_SPAWN_EGG = HELPER.createSpawnEggItem("pike", UAEntityTypes.PIKE::get, 4806944, 13002040);
 	public static final RegistryObject<ForgeSpawnEggItem> LIONFISH_SPAWN_EGG = HELPER.createSpawnEggItem("lionfish", UAEntityTypes.LIONFISH::get, 15281931, 16111310);
 	public static final RegistryObject<ForgeSpawnEggItem> PERCH_SPAWN_EGG = HELPER.createSpawnEggItem("perch", UAEntityTypes.PERCH::get, 7764021, 12555079);
 	
 	public static class Foods {
-		public static final FoodProperties MULBERRY = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).build();
-		public static final FoodProperties MULBERRY_JAM = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).alwaysEat().build();
-		public static final FoodProperties MULBERRY_BREAD = new FoodProperties.Builder().nutrition(9).saturationMod(0.4F).build();
-		public static final FoodProperties MULBERRY_PIE = new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build();
-
 		public static final FoodProperties PURPLE_PICKERELWEED = new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build();
 		public static final FoodProperties BLUE_PICKERELWEED = new FoodProperties.Builder().nutrition(2).saturationMod(0.0F).alwaysEat().build();
 

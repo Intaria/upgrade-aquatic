@@ -17,7 +17,6 @@ public class UABiomeTags {
 	public static final TagKey<Biome> HAS_AMMONITE_ORE = biomeTag("has_feature/ammonite_ore");
 	public static final TagKey<Biome> HAS_PICKERELWEED = biomeTag("has_feature/pickerelweed");
 	public static final TagKey<Biome> HAS_EXTRA_PICKERELWEED = biomeTag("has_feature/pickerelweed_extra");
-	public static final TagKey<Biome> HAS_EXTRA_DRIFTWOOD = biomeTag("has_feature/driftwood_extra");
 
 	private static TagKey<Biome> biomeTag(String name) {
 		return TagUtil.biomeTag(UpgradeAquatic.MOD_ID, name);

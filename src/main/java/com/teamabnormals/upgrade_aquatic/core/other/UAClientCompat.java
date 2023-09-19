@@ -18,7 +18,6 @@ public class UAClientCompat {
 	private static final RenderType TRANSLUSCENT = RenderType.translucent();
 
 	public static void registerClientCompat() {
-		registerBlockColors();
 		registerRenderLayers();
 	}
 
@@ -26,23 +25,8 @@ public class UAClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.GLASS_DOOR.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.GLASS_TRAPDOOR.get(), CUTOUT);
 
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.MULBERRY_JAM_BLOCK.get(), TRANSLUSCENT);
-
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.BEACHGRASS.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.TALL_BEACHGRASS.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.MULBERRY_VINE.get(), CUTOUT);
-
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.DRIFTWOOD_LADDER.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.DRIFTWOOD_POST.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.STRIPPED_DRIFTWOOD_POST.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_LADDER.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_POST.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.STRIPPED_RIVER_POST.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_SAPLING.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_LEAVES.get(), CUTOUT_MIPPED);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_LEAF_CARPET.get(), CUTOUT_MIPPED);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_LEAF_PILE.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RIVER_HEDGE.get(), CUTOUT_MIPPED);
 
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.BLUE_PICKERELWEED.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.PURPLE_PICKERELWEED.get(), CUTOUT);
@@ -148,14 +132,5 @@ public class UAClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.POTTED_BLUE_PICKERELWEED.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.POTTED_PINK_SEAROCKET.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.POTTED_WHITE_SEAROCKET.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.POTTED_RIVER_SAPLING.get(), CUTOUT);
-	}
-
-	public static void registerBlockColors() {
-		BlockColors blockColors = Minecraft.getInstance().getBlockColors();
-		ItemColors itemColors = Minecraft.getInstance().getItemColors();
-
-		DataUtil.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.get(0.5D, 1.0D), Arrays.asList(UABlocks.RIVER_LEAVES, UABlocks.RIVER_LEAF_PILE, UABlocks.RIVER_LEAF_CARPET, UABlocks.RIVER_HEDGE, UABlocks.MULBERRY_VINE));
-		DataUtil.registerBlockItemColor(itemColors, (color, items) -> FoliageColor.get(0.5D, 1.0D), Arrays.asList(UABlocks.RIVER_LEAVES, UABlocks.RIVER_LEAF_PILE, UABlocks.RIVER_LEAF_CARPET, UABlocks.RIVER_HEDGE));
 	}
 }

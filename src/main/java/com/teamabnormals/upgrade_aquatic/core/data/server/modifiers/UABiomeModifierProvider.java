@@ -48,18 +48,11 @@ public class UABiomeModifierProvider {
 
 	public static JsonCodecProvider<BiomeModifier> create(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		addFeature("beach_vegetation", Biomes.BEACH, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.PATCH_SEAROCKET, UAPlacedFeatures.BEACHGRASS_DUNES);
-		addFeature("river_tree", BiomeTags.IS_RIVER, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.RIVER_TREE);
 		addFeature("flowering_rush", Biomes.RIVER, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.PATCH_FLOWERING_RUSH);
 		addFeature("pickerelweed", UABiomeTags.HAS_PICKERELWEED, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.PATCH_PICKERELWEED);
 		addFeature("pickerelweed_extra", UABiomeTags.HAS_EXTRA_PICKERELWEED, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.PATCH_PICKERELWEED_EXTRA);
 		addFeature("ammonite_ore", UABiomeTags.HAS_AMMONITE_ORE, Decoration.UNDERGROUND_ORES, UAPlacedFeatures.ORE_AMMONITE);
 		addFeature("prismarine_coral", BiomeTags.IS_OCEAN, Decoration.RAW_GENERATION, UAPlacedFeatures.PRISMARINE_CORAL);
-
-		addFeature("driftwood", BiomeTags.IS_OCEAN, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.DRIFTWOOD_OCEAN);
-		addFeature("driftwood_beach", BiomeTags.IS_BEACH, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.DRIFTWOOD_BEACH);
-		addFeature("driftwood_river", BiomeTags.IS_RIVER, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.DRIFTWOOD_RIVER);
-		addFeature("driftwood_swamp", Tags.Biomes.IS_SWAMP, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.DRIFTWOOD_SWAMP);
-		addFeature("driftwood_extra", UABiomeTags.HAS_EXTRA_DRIFTWOOD, Decoration.VEGETAL_DECORATION, UAPlacedFeatures.DRIFTWOOD_EXTRA);
 
 		addCarver("underwater_canyon", BiomeTags.IS_OCEAN, Carving.AIR, UAConfiguredWorldCarvers.UNDERWATER_CANYON);
 

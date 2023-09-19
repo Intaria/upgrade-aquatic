@@ -1,6 +1,0 @@
-{
-    "parent": "blueprint:block/template_boards",
-    "textures": {
-        "all": "upgrade_aquatic:block/river_boards"
-    }
-}
