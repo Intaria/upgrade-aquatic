@@ -135,23 +135,6 @@ public class UAClientCompat {
 
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.ELDER_EYE.get(), CUTOUT);
 
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.BLUE_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.GREEN_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RED_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.ORANGE_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.YELLOW_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.PINK_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.PURPLE_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.WHITE_JELLY_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.BLUE_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.GREEN_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.RED_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.ORANGE_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.YELLOW_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.PINK_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.PURPLE_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.WHITE_JELLY_WALL_TORCH.get(), TRANSLUSCENT);
-
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.OCHRE_KELP.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.THORNY_KELP.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.POLAR_KELP.get(), CUTOUT);

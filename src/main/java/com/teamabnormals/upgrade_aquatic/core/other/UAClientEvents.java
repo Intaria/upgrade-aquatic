@@ -1,7 +1,6 @@
 package com.teamabnormals.upgrade_aquatic.core.other;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.teamabnormals.upgrade_aquatic.common.entity.monster.Thrasher;
 import com.teamabnormals.upgrade_aquatic.core.UAConfig;
 import com.teamabnormals.upgrade_aquatic.core.UpgradeAquatic;
 import net.minecraft.ChatFormatting;
@@ -24,32 +23,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @EventBusSubscriber(modid = UpgradeAquatic.MOD_ID, value = Dist.CLIENT)
 public class UAClientEvents {
-
-	@SubscribeEvent
-	public static void onEntityRenderPre(RenderLivingEvent.Pre<?, ?> event) {
-		if (event.getEntity() instanceof LocalPlayer clientPlayer) {
-			if (clientPlayer.getVehicle() instanceof Thrasher thrasher) {
-				ObfuscationReflectionHelper.setPrivateValue(LivingEntity.class, clientPlayer, 1.0F, "f_20931_");
-				ObfuscationReflectionHelper.setPrivateValue(LivingEntity.class, clientPlayer, 1.0F, "f_20932_");
-				clientPlayer.setXRot(0.0F);
-				clientPlayer.setYRot(thrasher.getYRot() + (90.0F % 360));
-				clientPlayer.yBodyRot = thrasher.yBodyRot + (90.0F % 360);
-			}
-		}
-	}
-
-	@SubscribeEvent(priority = EventPriority.LOWEST)
-	public static void onPlayerRenderPre(RenderPlayerEvent.Pre event) {
-		PoseStack stack = event.getPoseStack();
-		stack.pushPose();
-		if (event.getEntity().getVehicle() instanceof Thrasher thrasher) {
-			double dx = Math.cos((Mth.lerp(event.getPartialTick(), thrasher.yRotO, thrasher.getYRot())) * Math.PI / 180.0D);
-			double dz = Math.sin((Mth.lerp(event.getPartialTick(), thrasher.yRotO, thrasher.getYRot())) * Math.PI / 180.0D);
-
-			stack.translate((float) dx, 0.0F, (float) dz);
-		}
-	}
-
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void onPlayerRenderPost(RenderPlayerEvent.Post event) {
 		event.getPoseStack().popPose();
@@ -65,7 +38,7 @@ public class UAClientEvents {
 
 		if (player.getAbilities().instabuild && UAConfig.CLIENT.showUnobtainableDescription.get() && name.getNamespace().equals(UpgradeAquatic.MOD_ID)) {
 			String id = name.getPath();
-			if (id.contains("jelly") || id.contains("tongue_kelp") || id.contains("polar_kelp") || id.contains("ochre_kelp") || id.contains("thorny_kelp"))
+			if (id.contains("tongue_kelp") || id.contains("polar_kelp") || id.contains("ochre_kelp") || id.contains("thorny_kelp"))
 				event.getToolTip().add(Component.translatable("tooltip.upgrade_aquatic.unobtainable").withStyle(ChatFormatting.GRAY));
 		}
 	}

@@ -52,15 +52,6 @@ public final class UALootModifierProvider extends LootModifierProvider {
 						LootItem.lootTableItem(UABlocks.PURPLE_PICKERELWEED.get()).setWeight(12).when(inSwamp.or(inRiver)).build()
 				));
 
-		LootPool toothPool = LootPool.lootPool()
-				.name(UpgradeAquatic.MOD_ID + ":thrasher_teeth")
-				.setRolls(UniformGenerator.between(0, 1))
-				.add(LootItem.lootTableItem(UAItems.THRASHER_TOOTH.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
-				.build();
-		this.entry("add_thrasher_teeth")
-				.selects(BuiltInLootTables.UNDERWATER_RUIN_BIG, BuiltInLootTables.BURIED_TREASURE)
-				.addModifier(new LootPoolsModifier(List.of(toothPool), false));
-
 		LootPool pickerelweedPool = LootPool.lootPool()
 				.name(UpgradeAquatic.MOD_ID + ":pickerelweed")
 				.setRolls(UniformGenerator.between(1, 2))
@@ -75,20 +66,10 @@ public final class UALootModifierProvider extends LootModifierProvider {
 				.name(UpgradeAquatic.MOD_ID + ":elder_guardian")
 				.setRolls(ConstantValue.exactly(1))
 				.add(LootItem.lootTableItem(UABlocks.ELDER_EYE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-				.add(LootItem.lootTableItem(UABlocks.ELDER_GUARDIAN_SPINE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 2.0F))))
 				.build();
 		this.entry("entities/elder_guardian")
 				.selects("entities/elder_guardian")
 				.addModifier(new LootPoolsModifier(List.of(elderGuardianAdditionsPool), false));
-
-		LootPool guardianAdditionsPool = LootPool.lootPool()
-				.name(UpgradeAquatic.MOD_ID + ":guardian")
-				.setRolls(ConstantValue.exactly(1))
-				.add(LootItem.lootTableItem(UABlocks.GUARDIAN_SPINE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))
-				.build();
-		this.entry("entities/guardian")
-				.selects("entities/guardian")
-				.addModifier(new LootPoolsModifier(List.of(guardianAdditionsPool), false));
 	}
 
 }

@@ -1,7 +1,6 @@
 package com.teamabnormals.upgrade_aquatic.common.entity.animal;
 
 import com.teamabnormals.blueprint.common.entity.BucketableWaterAnimal;
-import com.teamabnormals.upgrade_aquatic.common.entity.monster.Thrasher;
 import com.teamabnormals.upgrade_aquatic.core.UAConfig;
 import com.teamabnormals.upgrade_aquatic.core.registry.UAEntityTypes;
 import com.teamabnormals.upgrade_aquatic.core.registry.UAItems;
@@ -90,21 +89,7 @@ public class Nautilus extends BucketableWaterAnimal {
 			}
 
 		});
-		this.goalSelector.addGoal(2, new AvoidEntityGoal<Thrasher>(this, Thrasher.class, 9.0F, 1.5D, 1.2D, EntitySelector.NO_SPECTATORS::test) {
 
-			@Override
-			public void start() {
-				((Nautilus) this.mob).setFleeing(true);
-				super.start();
-			}
-
-			@Override
-			public void stop() {
-				((Nautilus) this.mob).setFleeing(false);
-				super.stop();
-			}
-
-		});
 		this.goalSelector.addGoal(4, new Nautilus.SwimGoal(this));
 	}
 

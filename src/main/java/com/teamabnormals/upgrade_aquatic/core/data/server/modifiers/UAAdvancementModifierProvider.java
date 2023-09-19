@@ -21,8 +21,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.ArrayList;
 
 public final class UAAdvancementModifierProvider extends AdvancementModifierProvider {
-	private static final EntityType<?>[] MOBS_TO_KILL = new EntityType[]{UAEntityTypes.THRASHER.get(), UAEntityTypes.GREAT_THRASHER.get(), UAEntityTypes.FLARE.get()};
-
 	public UAAdvancementModifierProvider(DataGenerator dataGenerator) {
 		super(dataGenerator, UpgradeAquatic.MOD_ID);
 	}
@@ -55,16 +53,6 @@ public final class UAAdvancementModifierProvider extends AdvancementModifierProv
 		CriteriaModifier.Builder killAMob = CriteriaModifier.builder(this.modId);
 		CriteriaModifier.Builder killAllMobs = CriteriaModifier.builder(this.modId);
 		ArrayList<String> names = new ArrayList<>();
-		for (EntityType<?> entityType : MOBS_TO_KILL) {
-			String name = ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath();
-			KilledTrigger.TriggerInstance triggerInstance = KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(entityType));
-			killAMob.addCriterion(name, triggerInstance);
-			killAllMobs.addCriterion(name, triggerInstance);
-			names.add(name);
-		}
-
-		this.entry("adventure/kill_a_mob").selects("adventure/kill_a_mob").addModifier(killAMob.addIndexedRequirements(0, false, names.toArray(new String[0])).build());
-		this.entry("adventure/kill_all_mobs").selects("adventure/kill_all_mobs").addModifier(killAllMobs.requirements(RequirementsStrategy.AND).build());
 
 		CriteriaModifier.Builder tacticalFishing = CriteriaModifier.builder(this.modId);
 		names = new ArrayList<>();
@@ -80,10 +68,6 @@ public final class UAAdvancementModifierProvider extends AdvancementModifierProv
 		names.add("squid_bucket");
 		tacticalFishing.addCriterion("glow_squid_bucket", FilledBucketTrigger.TriggerInstance.filledBucket(ItemPredicate.Builder.item().of(UAItems.GLOW_SQUID_BUCKET.get()).build()));
 		names.add("glow_squid_bucket");
-		tacticalFishing.addCriterion("jellyfish_bucket", FilledBucketTrigger.TriggerInstance.filledBucket(ItemPredicate.Builder.item().of(UAItems.JELLYFISH_BUCKET.get()).build()));
-		names.add("jellyfish_bucket");
 		this.entry("husbandry/tactical_fishing").selects("husbandry/tactical_fishing").addModifier(tacticalFishing.addIndexedRequirements(0, false, names.toArray(new String[0])).build());
-
-		this.entry("adventure/throw_trident").selects("adventure/throw_trident").addModifier(new ParentModifier(new ResourceLocation(UpgradeAquatic.MOD_ID, "adventure/tooth_fairy")));
 	}
 }

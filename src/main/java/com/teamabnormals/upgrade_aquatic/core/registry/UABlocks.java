@@ -84,40 +84,6 @@ public class UABlocks {
 	public static final RegistryObject<Block> GLASS_TRAPDOOR = HELPER.createBlock("glass_trapdoor", () -> new TrapDoorBlock(Properties.copy(Blocks.GLASS)), CreativeModeTab.TAB_REDSTONE);
 	public static final RegistryObject<Block> GLASS_DOOR = HELPER.createBlock("glass_door", () -> new DoorBlock(Properties.copy(Blocks.GLASS)), CreativeModeTab.TAB_REDSTONE);
 
-	public static final RegistryObject<Block> BEDROLL = HELPER.createBlock("bedroll", createBedroll(DyeColor.BROWN), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> WHITE_BEDROLL = HELPER.createBlock("white_bedroll", createBedroll(DyeColor.WHITE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> ORANGE_BEDROLL = HELPER.createBlock("orange_bedroll", createBedroll(DyeColor.ORANGE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> MAGENTA_BEDROLL = HELPER.createBlock("magenta_bedroll", createBedroll(DyeColor.MAGENTA), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> LIGHT_BLUE_BEDROLL = HELPER.createBlock("light_blue_bedroll", createBedroll(DyeColor.LIGHT_BLUE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> YELLOW_BEDROLL = HELPER.createBlock("yellow_bedroll", createBedroll(DyeColor.YELLOW), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> LIME_BEDROLL = HELPER.createBlock("lime_bedroll", createBedroll(DyeColor.LIME), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> PINK_BEDROLL = HELPER.createBlock("pink_bedroll", createBedroll(DyeColor.PINK), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> GRAY_BEDROLL = HELPER.createBlock("gray_bedroll", createBedroll(DyeColor.GRAY), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> LIGHT_GRAY_BEDROLL = HELPER.createBlock("light_gray_bedroll", createBedroll(DyeColor.LIGHT_GRAY), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CYAN_BEDROLL = HELPER.createBlock("cyan_bedroll", createBedroll(DyeColor.CYAN), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> PURPLE_BEDROLL = HELPER.createBlock("purple_bedroll", createBedroll(DyeColor.PURPLE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> BLUE_BEDROLL = HELPER.createBlock("blue_bedroll", createBedroll(DyeColor.BLUE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> BROWN_BEDROLL = HELPER.createBlock("brown_bedroll", createBedroll(DyeColor.BROWN), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> GREEN_BEDROLL = HELPER.createBlock("green_bedroll", createBedroll(DyeColor.GREEN), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> RED_BEDROLL = HELPER.createBlock("red_bedroll", createBedroll(DyeColor.RED), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> BLACK_BEDROLL = HELPER.createBlock("black_bedroll", createBedroll(DyeColor.BLACK), CreativeModeTab.TAB_DECORATIONS);
-
-	public static final RegistryObject<Block> TOOTH_BLOCK = HELPER.createBlock("tooth_block", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_TILES = HELPER.createBlock("tooth_tiles", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_STAIRS = HELPER.createBlock("tooth_stairs", () -> new StairBlock(() -> TOOTH_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_SLAB = HELPER.createBlock("tooth_slab", () -> new SlabBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_WALL = HELPER.createBlock("tooth_wall", () -> new WallBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> TOOTH_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "tooth_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(TOOTH_TILES.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_BRICKS = HELPER.createBlock("tooth_bricks", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHISELED_TOOTH_BRICKS = HELPER.createBlock("chiseled_tooth_bricks", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_BRICK_STAIRS = HELPER.createBlock("tooth_brick_stairs", () -> new StairBlock(() -> TOOTH_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_BRICK_SLAB = HELPER.createBlock("tooth_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_BRICK_WALL = HELPER.createBlock("tooth_brick_wall", () -> new WallBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> TOOTH_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "tooth_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(TOOTH_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TOOTH_TRAPDOOR = HELPER.createBlock("tooth_trapdoor", () -> new ToothTrapdoorBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> TOOTH_DOOR = HELPER.createBlock("tooth_door", () -> new ToothDoorBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> TOOTH_LANTERN = HELPER.createBlock("tooth_lantern", () -> new ToothLanternBlock(Properties.copy(Blocks.END_STONE).sound(UASoundEvents.TOOTH_LANTERN).noOcclusion().lightLevel((unknown) -> 15)), CreativeModeTab.TAB_DECORATIONS);
-
 	public static final RegistryObject<Block> SCUTE_BLOCK = HELPER.createBlock("scute_block", () -> new ScuteBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_SHINGLES = HELPER.createBlock("scute_shingles", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_SHINGLE_STAIRS = HELPER.createBlock("scute_shingle_stairs", () -> new StairBlock(() -> SCUTE_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -230,27 +196,7 @@ public class UABlocks {
 	public static final RegistryObject<Block> ELDER_PRISMARINE_CORAL_SHOWER = HELPER.createBlock("elder_prismarine_coral_shower", () -> new DeadCoralShowerBlock(UAProperties.createPrismarineCoral(true)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> PRISMARINE_CORAL_SHOWER = HELPER.createBlock("prismarine_coral_shower", () -> new CoralShowerBlock(ELDER_PRISMARINE_CORAL_SHOWER.get(), UAProperties.createPrismarineCoral(false)), CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> ELDER_GUARDIAN_SPINE = HELPER.createBlock("elder_guardian_spine", () -> new GuardianSpineBlock(UAProperties.SPINES, true), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> GUARDIAN_SPINE = HELPER.createBlock("guardian_spine", () -> new GuardianSpineBlock(UAProperties.SPINES, false), CreativeModeTab.TAB_REDSTONE);
 	public static final RegistryObject<Block> ELDER_EYE = HELPER.createRareBlock("elder_eye", () -> new ElderEyeBlock(UAProperties.ELDER_EYE), Rarity.RARE, CreativeModeTab.TAB_REDSTONE);
-
-	public static final RegistryObject<Block> PINK_JELLY_WALL_TORCH = HELPER.createBlockNoItem("pink_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.PINK));
-	public static final RegistryObject<Block> PURPLE_JELLY_WALL_TORCH = HELPER.createBlockNoItem("purple_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.PURPLE));
-	public static final RegistryObject<Block> BLUE_JELLY_WALL_TORCH = HELPER.createBlockNoItem("blue_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.BLUE));
-	public static final RegistryObject<Block> GREEN_JELLY_WALL_TORCH = HELPER.createBlockNoItem("green_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.GREEN));
-	public static final RegistryObject<Block> YELLOW_JELLY_WALL_TORCH = HELPER.createBlockNoItem("yellow_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.YELLOW));
-	public static final RegistryObject<Block> ORANGE_JELLY_WALL_TORCH = HELPER.createBlockNoItem("orange_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.ORANGE));
-	public static final RegistryObject<Block> RED_JELLY_WALL_TORCH = HELPER.createBlockNoItem("red_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.RED));
-	public static final RegistryObject<Block> WHITE_JELLY_WALL_TORCH = HELPER.createBlockNoItem("white_jelly_wall_torch", () -> new JellyWallTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.WHITE));
-
-	public static final RegistryObject<Block> PINK_JELLY_TORCH = HELPER.createStandingAndWallBlock("pink_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.PINK), PINK_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> PURPLE_JELLY_TORCH = HELPER.createStandingAndWallBlock("purple_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.PURPLE), PURPLE_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> BLUE_JELLY_TORCH = HELPER.createStandingAndWallBlock("blue_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.BLUE), BLUE_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> GREEN_JELLY_TORCH = HELPER.createStandingAndWallBlock("green_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.GREEN), GREEN_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> YELLOW_JELLY_TORCH = HELPER.createStandingAndWallBlock("yellow_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.YELLOW), YELLOW_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> ORANGE_JELLY_TORCH = HELPER.createStandingAndWallBlock("orange_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.ORANGE), ORANGE_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> RED_JELLY_TORCH = HELPER.createStandingAndWallBlock("red_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.RED), RED_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> WHITE_JELLY_TORCH = HELPER.createStandingAndWallBlock("white_jelly_torch", () -> new JellyTorchBlock(Properties.copy(Blocks.TORCH).sound(SoundType.METAL), JellyTorchBlock.JellyTorchType.WHITE), WHITE_JELLY_WALL_TORCH, CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> CORALSTONE = HELPER.createBlock("coralstone", () -> new CoralstoneBlock(UAProperties.CORALSTONE, false), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> BUBBLE_CORALSTONE = HELPER.createBlock("bubble_coralstone", () -> new CoralstoneBlock(UAProperties.CORALSTONE, false, new Block[]{Blocks.BUBBLE_CORAL, Blocks.BUBBLE_CORAL_FAN, Blocks.BUBBLE_CORAL_WALL_FAN}), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -496,10 +442,6 @@ public class UABlocks {
 	public static final RegistryObject<Block> RIVER_LEAF_CARPET = HELPER.createCompatBlock("quark", "river_leaf_carpet", () -> new LeafCarpetBlock(UAProperties.RIVER_WOOD.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> RIVER_HEDGE = HELPER.createCompatFuelBlock("quark", "river_hedge", () -> new HedgeBlock(UAProperties.RIVER_WOOD.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
-	private static Supplier<BedrollBlock> createBedroll(DyeColor color) {
-		return () -> new BedrollBlock(color, BlockBehaviour.Properties.of(Material.WOOL, (state) -> state.getValue(BedBlock.PART) == BedPart.FOOT ? color.getMaterialColor() : MaterialColor.WOOL).sound(SoundType.WOOL).strength(0.2F, 0.3F).noOcclusion());
-	}
-
 	public static final class UAProperties {
 		public static final WoodSetProperties DRIFTWOOD = WoodSetProperties.builder(MaterialColor.STONE).build();
 		public static final WoodSetProperties RIVER_WOOD = WoodSetProperties.builder(MaterialColor.COLOR_BROWN).build();
@@ -511,7 +453,6 @@ public class UABlocks {
 
 		public static final BlockBehaviour.Properties CORALSTONE = Properties.copy(Blocks.STONE).randomTicks();
 
-		public static final BlockBehaviour.Properties SPINES = BlockBehaviour.Properties.of(Material.GRASS).noCollission().strength(1.5F);
 		public static final BlockBehaviour.Properties ELDER_EYE = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.TERRACOTTA_WHITE).sound(SoundType.METAL).strength(1.0F);
 		public static final BlockBehaviour.Properties PICKERELWEED = BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.GRASS).randomTicks().noCollission().strength(0.0F).sound(SoundType.WET_GRASS);
 		public static final BlockBehaviour.Properties BEACHGRASS_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_YELLOW).strength(0.5F).sound(SoundType.GRASS).noOcclusion();

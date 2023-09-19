@@ -4,10 +4,8 @@ import com.teamabnormals.blueprint.core.util.BlockUtil;
 import com.teamabnormals.blueprint.core.util.TradeUtil;
 import com.teamabnormals.blueprint.core.util.TradeUtil.BlueprintTrade;
 import com.teamabnormals.upgrade_aquatic.api.util.UAEntityPredicates;
-import com.teamabnormals.upgrade_aquatic.common.block.BedrollBlock;
 import com.teamabnormals.upgrade_aquatic.common.entity.animal.Lionfish;
 import com.teamabnormals.upgrade_aquatic.common.entity.animal.Pike;
-import com.teamabnormals.upgrade_aquatic.common.entity.monster.Thrasher;
 import com.teamabnormals.upgrade_aquatic.core.UAConfig;
 import com.teamabnormals.upgrade_aquatic.core.UpgradeAquatic;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
@@ -85,10 +83,7 @@ public class UAEvents {
 		}
 		if (entity instanceof WaterAnimal waterAnimal && !(entity instanceof Enemy)) {
 			if (entity instanceof Dolphin dolphin) {
-				dolphin.targetSelector.addGoal(0, (new HurtByTargetGoal(dolphin, Thrasher.class)).setAlertOthers());
 				dolphin.goalSelector.addGoal(1, new MeleeAttackGoal(dolphin, 1.2D, true));
-			} else {
-				waterAnimal.goalSelector.addGoal(1, new AvoidEntityGoal<>(waterAnimal, Thrasher.class, 20.0F, 1.4D, 1.6D, EntitySelector.ENTITY_STILL_ALIVE::test));
 			}
 		}
 	}
@@ -108,26 +103,6 @@ public class UAEvents {
 			Pose pose = entity.getDeltaMovement().horizontalDistanceSqr() >= 0.000625F && entity.getCommandSenderWorld().getFluidState(entity.blockPosition().below()).is(FluidTags.WATER) ? Pose.SWIMMING : Pose.STANDING;
 			if (entity.getPose() != pose) entity.setPose(pose);
 		}
-	}
-
-	@SubscribeEvent
-	public static void onPlayerSleep(PlayerSleepInBedEvent event) {
-		Player player = event.getEntity();
-		BlockState state = player.getCommandSenderWorld().getBlockState(event.getPos());
-		if (event.getResultStatus() == null && state.getFluidState().getAmount() == 8 && state.getBlock() instanceof BedrollBlock) {
-			if (player instanceof ServerPlayer serverPlayer && player.isAlive()) {
-				if (!player.level.isClientSide()) {
-					UACriteriaTriggers.SLEEP_UNDERWATER.trigger(serverPlayer);
-				}
-			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void onPlayerSetSpawn(PlayerSetSpawnEvent event) {
-		Entity entity = event.getEntity();
-		BlockPos spawn = event.getNewSpawn();
-		if (spawn != null && entity.getCommandSenderWorld().getBlockState(spawn).getBlock() instanceof BedrollBlock) event.setCanceled(true);
 	}
 
 	@SubscribeEvent
@@ -176,17 +151,6 @@ public class UAEvents {
 				if (player.level.getGameTime() % timeTillDamage == 0) {
 					headSlotStack.hurtAndBreak(1, player, (p_213341_0_) -> p_213341_0_.broadcastBreakEvent(EquipmentSlot.HEAD));
 				}
-			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void onPlayerMount(EntityMountEvent event) {
-		Entity mountingEntity = event.getEntityMounting();
-		Entity entityBeingMounted = event.getEntityBeingMounted();
-		if (mountingEntity instanceof Player player && entityBeingMounted instanceof Thrasher thrasher) {
-			if (event.isDismounting() && player.isAlive() && !player.isCreative() && !player.isSpectator() && thrasher.isAlive() && !thrasher.isStunned()) {
-				event.setCanceled(true);
 			}
 		}
 	}
@@ -253,12 +217,5 @@ public class UAEvents {
 
 			TradeUtil.addVillagerTrades(event, TradeUtil.MASTER, new BlueprintTrade(UAItems.LIONFISH.get(), 3, 1, 16, 30));
 		}
-
-		TradeUtil.addVillagerTrades(event, VillagerProfession.MASON, TradeUtil.MASTER, new BlueprintTrade(5, UABlocks.TOOTH_TILES.get().asItem(), 1, 12, 30), new BlueprintTrade(5, UABlocks.TOOTH_BRICKS.get().asItem(), 1, 12, 30));
-
-		if (UAConfig.COMMON.clericsBuyThrasherTeeth.get()) TradeUtil.addVillagerTrades(event, VillagerProfession.CLERIC, TradeUtil.EXPERT, new BlueprintTrade(UAItems.THRASHER_TOOTH.get(), 1, 1, 12, 15));
-
-		if (UAConfig.COMMON.leatherworkersSellBedrolls.get())
-			TradeUtil.addVillagerTrades(event, VillagerProfession.LEATHERWORKER, TradeUtil.APPRENTICE, new BlueprintTrade(1, UABlocks.BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.WHITE_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.ORANGE_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.MAGENTA_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.LIGHT_BLUE_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.YELLOW_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.LIME_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.PINK_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.GRAY_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.LIGHT_GRAY_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.CYAN_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.PURPLE_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.BLUE_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.BROWN_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.GREEN_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.RED_BEDROLL.get().asItem(), 1, 8, 10), new BlueprintTrade(1, UABlocks.BLACK_BEDROLL.get().asItem(), 1, 8, 10));
 	}
 }

@@ -14,16 +14,6 @@
             },
             "trigger": "minecraft:filled_bucket"
           },
-          "upgrade_aquatic:jellyfish_bucket": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "upgrade_aquatic:jellyfish_bucket"
-                ]
-              }
-            },
-            "trigger": "minecraft:filled_bucket"
-          },
           "upgrade_aquatic:lionfish_bucket": {
             "conditions": {
               "item": {
@@ -85,8 +75,7 @@
               "upgrade_aquatic:lionfish_bucket",
               "upgrade_aquatic:perch_bucket",
               "upgrade_aquatic:squid_bucket",
-              "upgrade_aquatic:glow_squid_bucket",
-              "upgrade_aquatic:jellyfish_bucket"
+              "upgrade_aquatic:glow_squid_bucket"
             ]
           }
         ]

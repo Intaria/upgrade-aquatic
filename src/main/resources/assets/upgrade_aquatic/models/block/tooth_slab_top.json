@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "upgrade_aquatic:block/tooth_tiles",
-        "top": "upgrade_aquatic:block/tooth_tiles",
-        "side": "upgrade_aquatic:block/tooth_tiles"
-    }
-}

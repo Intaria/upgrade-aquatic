@@ -19,17 +19,12 @@ public class UABiomeTagsProvider extends BiomeTagsProvider {
 	@Override
 	public void addTags() {
 		this.tag(UABiomeTags.HAS_NAUTILUS).add(Biomes.OCEAN, Biomes.DEEP_OCEAN, Biomes.WARM_OCEAN, Biomes.LUKEWARM_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN);
-		this.tag(UABiomeTags.HAS_THRASHER).add(Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.FROZEN_OCEAN).addTag(UABiomeTags.HAS_GREAT_THRASHER);
-		this.tag(UABiomeTags.HAS_GREAT_THRASHER).add(Biomes.DEEP_FROZEN_OCEAN);
 		this.tag(UABiomeTags.HAS_LIONFISH).add(Biomes.WARM_OCEAN);
 
 		this.tag(UABiomeTags.HAS_PIKE).add(Biomes.RIVER);
 		this.tag(UABiomeTags.HAS_EXTRA_PIKE).addTag(Tags.Biomes.IS_SWAMP);
 		this.tag(UABiomeTags.HAS_SQUID).add(Biomes.SWAMP);
 		this.tag(UABiomeTags.HAS_PERCH).add(Biomes.SWAMP);
-
-		this.tag(UABiomeTags.HAS_CASSIOPEA_JELLYFISH).add(Biomes.LUKEWARM_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN);
-		this.tag(UABiomeTags.HAS_JELLYFISH).add(Biomes.WARM_OCEAN).addTag(UABiomeTags.HAS_CASSIOPEA_JELLYFISH);
 
 		this.tag(UABiomeTags.HAS_AMMONITE_ORE).addTag(BiomeTags.IS_BEACH).addTag(BiomeTags.IS_OCEAN).add(Biomes.STONY_SHORE);
 		this.tag(UABiomeTags.HAS_PICKERELWEED).addTag(BiomeTags.IS_JUNGLE).add(Biomes.RIVER).addTag(Tags.Biomes.IS_SWAMP);

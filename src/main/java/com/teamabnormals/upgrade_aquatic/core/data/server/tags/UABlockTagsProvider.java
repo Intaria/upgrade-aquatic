@@ -27,12 +27,12 @@ public class UABlockTagsProvider extends BlockTagsProvider {
 		mineableWithAxe.add(MULBERRY_PUNNET.get());
 		mineableWithAxe.add(RIVER_BOARDS.get(), RIVER_BOOKSHELF.get(), RIVER_LADDER.get(), RIVER_BEEHIVE.get(), RIVER_CHESTS.getFirst().get(), RIVER_CHESTS.getSecond().get(), RIVER_HEDGE.get(), RIVER_POST.get(), STRIPPED_RIVER_POST.get());
 		mineableWithAxe.add(DRIFTWOOD_BOARDS.get(), DRIFTWOOD_BOOKSHELF.get(), DRIFTWOOD_LADDER.get(), DRIFTWOOD_BEEHIVE.get(), DRIFTWOOD_CHEST.getFirst().get(), DRIFTWOOD_CHEST.getSecond().get(), DRIFTWOOD_POST.get(), STRIPPED_DRIFTWOOD_POST.get());
-		mineableWithPickaxe.add(EMBEDDED_AMMONITE.get(), PRISMARINE_ROD_BUNDLE.get(), ELDER_GUARDIAN_SPINE.get(), GUARDIAN_SPINE.get(), ELDER_EYE.get());
+		mineableWithPickaxe.add(EMBEDDED_AMMONITE.get(), PRISMARINE_ROD_BUNDLE.get(), ELDER_EYE.get());
 		mineableWithHoe.add(RIVER_LEAVES.get(), RIVER_LEAF_PILE.get(), RIVER_LEAF_CARPET.get());
 
 		for (RegistryObject<Block> block : HELPER.getDeferredRegister().getEntries()) {
 			String path = block.getId().getPath();
-			if (path.contains("luminous_prismarine") || (path.contains("dead") && path.contains("coral")) || path.contains("coral_block") || path.contains("tooth") || path.contains("scute") || path.contains("coralstone") || path.contains("kelpy_cobblestone") || path.contains("kelpy_stone")) {
+			if (path.contains("luminous_prismarine") || (path.contains("dead") && path.contains("coral")) || path.contains("coral_block") || path.contains("scute") || path.contains("coralstone") || path.contains("kelpy_cobblestone") || path.contains("kelpy_stone")) {
 				mineableWithPickaxe.add(block.get());
 			} else if (path.contains("beachgrass") || path.contains("pickerelweed_block") || path.contains("kelp_block")) {
 				mineableWithHoe.add(block.get());

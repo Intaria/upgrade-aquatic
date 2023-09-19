@@ -3,20 +3,13 @@ package com.teamabnormals.upgrade_aquatic.core;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import com.teamabnormals.upgrade_aquatic.client.GlowSquidSpriteUploader;
 import com.teamabnormals.upgrade_aquatic.client.model.*;
-import com.teamabnormals.upgrade_aquatic.client.model.jellyfish.BoxJellyfishModel;
-import com.teamabnormals.upgrade_aquatic.client.model.jellyfish.CassiopeaJellyfishModel;
-import com.teamabnormals.upgrade_aquatic.client.model.jellyfish.ImmortalJellyfishModel;
 import com.teamabnormals.upgrade_aquatic.client.renderer.entity.*;
-import com.teamabnormals.upgrade_aquatic.client.renderer.entity.jellyfish.BoxJellyfishRenderer;
-import com.teamabnormals.upgrade_aquatic.client.renderer.entity.jellyfish.CassiopeaJellyfishRenderer;
-import com.teamabnormals.upgrade_aquatic.client.renderer.entity.jellyfish.ImmortalJellyfishRenderer;
 import com.teamabnormals.upgrade_aquatic.core.data.server.UAStructureRepaletterProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.modifiers.UAAdvancementModifierProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.modifiers.UABiomeModifierProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.modifiers.UALootModifierProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.tags.UABiomeTagsProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.tags.UABlockTagsProvider;
-import com.teamabnormals.upgrade_aquatic.core.data.server.tags.UAEntityTypeTagsProvider;
 import com.teamabnormals.upgrade_aquatic.core.other.UAClientCompat;
 import com.teamabnormals.upgrade_aquatic.core.other.UACompat;
 import com.teamabnormals.upgrade_aquatic.core.other.UADataSerializers;
@@ -101,7 +94,6 @@ public class UpgradeAquatic {
 		generator.addProvider(includeServer, new UALootModifierProvider(generator));
 		generator.addProvider(includeServer, new UAAdvancementModifierProvider(generator));
 		generator.addProvider(includeServer, new UABlockTagsProvider(generator, existingFileHelper));
-		generator.addProvider(includeServer, new UAEntityTypeTagsProvider(generator, existingFileHelper));
 		generator.addProvider(includeServer, new UABiomeTagsProvider(generator, existingFileHelper));
 		generator.addProvider(includeServer, UABiomeModifierProvider.create(generator, existingFileHelper));
 		generator.addProvider(includeServer, new UAStructureRepaletterProvider(generator));
@@ -119,15 +111,8 @@ public class UpgradeAquatic {
 		event.registerLayerDefinition(PikeModel.LOCATION, PikeModel::createBodyLayer);
 		event.registerLayerDefinition(LionfishModel.LOCATION, LionfishModel::createBodyLayer);
 		event.registerLayerDefinition(PerchModel.LOCATION, PerchModel::createBodyLayer);
-		event.registerLayerDefinition(ThrasherModel.LOCATION, ThrasherModel::createBodyLayer);
-		event.registerLayerDefinition(FlareModel.LOCATION, FlareModel::createBodyLayer);
-		event.registerLayerDefinition(SonarWaveModel.LOCATION, SonarWaveModel::createBodyLayer);
 		event.registerLayerDefinition(UluluModel.LOCATION, UluluModel::createBodyLayer);
 		event.registerLayerDefinition(UAGlowSquidModel.LOCATION, UAGlowSquidModel::createBodyLayer);
-		event.registerLayerDefinition(GooseModel.LOCATION, GooseModel::createBodyLayer);
-		event.registerLayerDefinition(BoxJellyfishModel.LOCATION, BoxJellyfishModel::createBodyLayer);
-		event.registerLayerDefinition(CassiopeaJellyfishModel.LOCATION, CassiopeaJellyfishModel::createBodyLayer);
-		event.registerLayerDefinition(ImmortalJellyfishModel.LOCATION, ImmortalJellyfishModel::createBodyLayer);
 	}
 
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
@@ -135,15 +120,7 @@ public class UpgradeAquatic {
 		event.registerEntityRenderer(UAEntityTypes.PIKE.get(), PikeRenderer::new);
 		event.registerEntityRenderer(UAEntityTypes.LIONFISH.get(), LionfishRenderer::new);
 		event.registerEntityRenderer(UAEntityTypes.PERCH.get(), PerchRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.THRASHER.get(), ThrasherRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.GREAT_THRASHER.get(), GreatThrasherRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.FLARE.get(), FlareRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.SONAR_WAVE.get(), SonarWaveRenderer::new);
 		event.registerEntityRenderer(UAEntityTypes.ULULU.get(), UluluRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.GOOSE.get(), GooseRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.BOX_JELLYFISH.get(), BoxJellyfishRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.CASSIOPEA_JELLYFISH.get(), CassiopeaJellyfishRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.IMMORTAL_JELLYFISH.get(), ImmortalJellyfishRenderer::new);
 		event.registerEntityRenderer(EntityType.GLOW_SQUID, UAGlowSquidRenderer::new);
 	}
 }

@@ -14,12 +14,6 @@ public class UABiomeTags {
 	public static final TagKey<Biome> HAS_EXTRA_PIKE = biomeTag("has_animal/pike_extra");
 	public static final TagKey<Biome> HAS_SQUID = biomeTag("has_animal/squid");
 
-	public static final TagKey<Biome> HAS_JELLYFISH = biomeTag("has_animal/jellyfish");
-	public static final TagKey<Biome> HAS_CASSIOPEA_JELLYFISH = biomeTag("has_animal/cassiopea_jellyfish");
-
-	public static final TagKey<Biome> HAS_THRASHER = biomeTag("has_monster/thrasher");
-	public static final TagKey<Biome> HAS_GREAT_THRASHER = biomeTag("has_monster/great_thrasher");
-
 	public static final TagKey<Biome> HAS_AMMONITE_ORE = biomeTag("has_feature/ammonite_ore");
 	public static final TagKey<Biome> HAS_PICKERELWEED = biomeTag("has_feature/pickerelweed");
 	public static final TagKey<Biome> HAS_EXTRA_PICKERELWEED = biomeTag("has_feature/pickerelweed_extra");
