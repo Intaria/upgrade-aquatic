@@ -22,9 +22,6 @@ public class UAClientCompat {
 	}
 
 	public static void registerRenderLayers() {
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.GLASS_DOOR.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.GLASS_TRAPDOOR.get(), CUTOUT);
-
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.BEACHGRASS.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.TALL_BEACHGRASS.get(), CUTOUT);
 
