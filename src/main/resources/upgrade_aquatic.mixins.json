@@ -8,11 +8,6 @@
     "BubbleColumnBlockMixin",
     "SquidMixin"
   ],
-  "client": [
-    "client.DrownedModelMixin",
-    "client.DrownedRendererMixin",
-    "client.LocalPlayerMixin"
-  ],
   "injectors": {
     "defaultRequire": 1
   }

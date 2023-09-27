@@ -52,10 +52,9 @@ public final class UAAdvancementModifierProvider extends AdvancementModifierProv
 
 		CriteriaModifier.Builder killAMob = CriteriaModifier.builder(this.modId);
 		CriteriaModifier.Builder killAllMobs = CriteriaModifier.builder(this.modId);
-		ArrayList<String> names = new ArrayList<>();
 
 		CriteriaModifier.Builder tacticalFishing = CriteriaModifier.builder(this.modId);
-		names = new ArrayList<>();
+		ArrayList<String> names = new ArrayList<>();
 		for (var object : UAItems.HELPER.getDeferredRegister().getEntries()) {
 			Item item = object.get();
 			if (item instanceof MobBucketItem) {

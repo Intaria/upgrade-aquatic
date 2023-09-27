@@ -10,6 +10,7 @@ import com.teamabnormals.upgrade_aquatic.core.data.server.modifiers.UABiomeModif
 import com.teamabnormals.upgrade_aquatic.core.data.server.modifiers.UALootModifierProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.tags.UABiomeTagsProvider;
 import com.teamabnormals.upgrade_aquatic.core.data.server.tags.UABlockTagsProvider;
+import com.teamabnormals.upgrade_aquatic.core.data.server.tags.UAEntityTypeTagsProvider;
 import com.teamabnormals.upgrade_aquatic.core.other.UAClientCompat;
 import com.teamabnormals.upgrade_aquatic.core.other.UACompat;
 import com.teamabnormals.upgrade_aquatic.core.other.UADataSerializers;
@@ -94,6 +95,7 @@ public class UpgradeAquatic {
 		generator.addProvider(includeServer, new UALootModifierProvider(generator));
 		generator.addProvider(includeServer, new UAAdvancementModifierProvider(generator));
 		generator.addProvider(includeServer, new UABlockTagsProvider(generator, existingFileHelper));
+		generator.addProvider(includeServer, new UAEntityTypeTagsProvider(generator, existingFileHelper));
 		generator.addProvider(includeServer, new UABiomeTagsProvider(generator, existingFileHelper));
 		generator.addProvider(includeServer, UABiomeModifierProvider.create(generator, existingFileHelper));
 		generator.addProvider(includeServer, new UAStructureRepaletterProvider(generator));
@@ -111,7 +113,6 @@ public class UpgradeAquatic {
 		event.registerLayerDefinition(PikeModel.LOCATION, PikeModel::createBodyLayer);
 		event.registerLayerDefinition(LionfishModel.LOCATION, LionfishModel::createBodyLayer);
 		event.registerLayerDefinition(PerchModel.LOCATION, PerchModel::createBodyLayer);
-		event.registerLayerDefinition(UluluModel.LOCATION, UluluModel::createBodyLayer);
 		event.registerLayerDefinition(UAGlowSquidModel.LOCATION, UAGlowSquidModel::createBodyLayer);
 	}
 
@@ -120,7 +121,6 @@ public class UpgradeAquatic {
 		event.registerEntityRenderer(UAEntityTypes.PIKE.get(), PikeRenderer::new);
 		event.registerEntityRenderer(UAEntityTypes.LIONFISH.get(), LionfishRenderer::new);
 		event.registerEntityRenderer(UAEntityTypes.PERCH.get(), PerchRenderer::new);
-		event.registerEntityRenderer(UAEntityTypes.ULULU.get(), UluluRenderer::new);
 		event.registerEntityRenderer(EntityType.GLOW_SQUID, UAGlowSquidRenderer::new);
 	}
 }

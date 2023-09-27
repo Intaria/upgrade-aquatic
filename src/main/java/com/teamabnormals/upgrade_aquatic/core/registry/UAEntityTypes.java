@@ -21,7 +21,6 @@ public class UAEntityTypes {
 	public static final RegistryObject<EntityType<Pike>> PIKE = HELPER.createLivingEntity("pike", Pike::new, MobCategory.WATER_AMBIENT, 0.7F, 0.4F);
 	public static final RegistryObject<EntityType<Perch>> PERCH = HELPER.createLivingEntity("perch", Perch::new, MobCategory.WATER_AMBIENT, 0.6F, 0.5F);
 	public static final RegistryObject<EntityType<Lionfish>> LIONFISH = HELPER.createLivingEntity("lionfish", Lionfish::new, MobCategory.WATER_AMBIENT, 0.6F, 0.5F);
-	public static final RegistryObject<EntityType<Ululu>> ULULU = HELPER.createLivingEntity("ululu", Ululu::new, MobCategory.MONSTER, 2.04F, 2.04F);
 	
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
@@ -29,7 +28,6 @@ public class UAEntityTypes {
 		event.put(PIKE.get(), Pike.registerAttributes().build());
 		event.put(LIONFISH.get(), Lionfish.registerAttributes().build());
 		event.put(PERCH.get(), Perch.createAttributes().build());
-		event.put(ULULU.get(), Ululu.registerAttributes().build());
 	}
 
 	public static void registerSpawnPlacements() {

@@ -23,10 +23,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @EventBusSubscriber(modid = UpgradeAquatic.MOD_ID, value = Dist.CLIENT)
 public class UAClientEvents {
-	@SubscribeEvent(priority = EventPriority.LOWEST)
-	public static void onPlayerRenderPost(RenderPlayerEvent.Post event) {
-		event.getPoseStack().popPose();
-	}
+
 
 	@SubscribeEvent
 	public static void onItemTooltip(ItemTooltipEvent event) {

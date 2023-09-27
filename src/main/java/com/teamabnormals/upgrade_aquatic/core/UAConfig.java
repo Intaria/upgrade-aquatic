@@ -8,8 +8,6 @@ import org.apache.commons.lang3.tuple.Pair;
 public class UAConfig {
 
 	public static class Common {
-		public final ConfigValue<Boolean> drownedSwimmingAnimation;
-
 		@ConfigKey("kelpy_ocean_ruins")
 		public final ConfigValue<Boolean> kelpyOceanRuins;
 		public final ConfigValue<Integer> deepOceanMobMaxHeight;
@@ -22,7 +20,6 @@ public class UAConfig {
 			builder.pop();
 
 			builder.push("mobs");
-			this.drownedSwimmingAnimation = builder.comment("Give Drowneds a swimming animation, like in bedrock edition").define("Drowned swimming animation", true);
 			this.deepOceanMobMaxHeight = builder.comment("The max height that deep ocean mobs can spawn at").defineInRange("Deep ocean mob max height", 30, 0, 255);
 			builder.pop();
 		}

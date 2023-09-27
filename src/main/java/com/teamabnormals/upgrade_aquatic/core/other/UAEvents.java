@@ -16,7 +16,6 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.protocol.game.ClientboundAwardStatsPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -36,7 +35,6 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.monster.Drowned;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -51,12 +49,10 @@ import net.minecraftforge.event.TickEvent.Phase;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.event.entity.player.PlayerSetSpawnEvent;
-import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -85,23 +81,6 @@ public class UAEvents {
 			if (entity instanceof Dolphin dolphin) {
 				dolphin.goalSelector.addGoal(1, new MeleeAttackGoal(dolphin, 1.2D, true));
 			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void onEntityUpdate(LivingTickEvent event) {
-		LivingEntity entity = event.getEntity();
-		if (entity instanceof Phantom) {
-			if (((Phantom) entity).getTarget() instanceof ServerPlayer serverPlayer) {
-				StatsCounter statisticsManager = serverPlayer.getStats();
-				if (statisticsManager.getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) < 72000) {
-					((Phantom) entity).setTarget(null);
-				}
-			}
-		}
-		if (entity instanceof Drowned && UAConfig.COMMON.drownedSwimmingAnimation.get() && entity.isEffectiveAi()) {
-			Pose pose = entity.getDeltaMovement().horizontalDistanceSqr() >= 0.000625F && entity.getCommandSenderWorld().getFluidState(entity.blockPosition().below()).is(FluidTags.WATER) ? Pose.SWIMMING : Pose.STANDING;
-			if (entity.getPose() != pose) entity.setPose(pose);
 		}
 	}
 
@@ -137,12 +116,7 @@ public class UAEvents {
 	@SubscribeEvent
 	public static void onPlayerTick(PlayerTickEvent event) {
 		Player player = event.player;
-		if (!event.player.level.isClientSide && event.player.level.getGameTime() % 5 == 0 && event.player instanceof ServerPlayer serverPlayer) {
-			StatsCounter statisticsManager = serverPlayer.getStats();
-			Object2IntMap<Stat<?>> object2intmap = new Object2IntOpenHashMap<>();
-			object2intmap.put(Stats.CUSTOM.get(Stats.TIME_SINCE_REST), statisticsManager.getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)));
-			serverPlayer.connection.send(new ClientboundAwardStatsPacket(object2intmap));
-		}
+
 		ItemStack headSlotStack = player.getItemBySlot(EquipmentSlot.HEAD);
 		if (event.phase == Phase.END && player.isEffectiveAi() && !headSlotStack.isEmpty() && headSlotStack.is(Items.TURTLE_HELMET)) {
 			int timeTillDamage = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, headSlotStack) > 0 ? 40 * (1 + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, headSlotStack) / 2) : 40;
@@ -152,15 +126,6 @@ public class UAEvents {
 					headSlotStack.hurtAndBreak(1, player, (p_213341_0_) -> p_213341_0_.broadcastBreakEvent(EquipmentSlot.HEAD));
 				}
 			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void onDrownedPoseChange(EntityEvent.Size event) {
-		Entity entity = event.getEntity();
-		if (entity instanceof Drowned && entity.getPose() == Pose.SWIMMING && UAConfig.COMMON.drownedSwimmingAnimation.get()) {
-			event.setNewSize(new EntityDimensions(event.getOldSize().width, 0.40F, false));
-			event.setNewEyeHeight(0.40F);
 		}
 	}
 
