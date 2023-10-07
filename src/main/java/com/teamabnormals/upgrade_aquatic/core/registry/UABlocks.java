@@ -10,7 +10,6 @@ import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
 import com.teamabnormals.blueprint.common.block.thatch.ThatchBlock;
 import com.teamabnormals.blueprint.common.block.thatch.ThatchSlabBlock;
 import com.teamabnormals.blueprint.common.block.thatch.ThatchStairBlock;
-import com.teamabnormals.blueprint.common.block.thatch.ThatchVerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.wood.*;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.PropertyUtil.WoodSetProperties;
@@ -68,27 +67,23 @@ public class UABlocks {
 	public static final RegistryObject<Block> BEACHGRASS_THATCH = HELPER.createBlock("beachgrass_thatch", () -> new ThatchBlock(UAProperties.BEACHGRASS_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> BEACHGRASS_THATCH_SLAB = HELPER.createBlock("beachgrass_thatch_slab", () -> new ThatchSlabBlock(UAProperties.BEACHGRASS_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> BEACHGRASS_THATCH_STAIRS = HELPER.createBlock("beachgrass_thatch_stairs", () -> new ThatchStairBlock(BEACHGRASS_THATCH.get().defaultBlockState(), UAProperties.BEACHGRASS_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> BEACHGRASS_THATCH_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "beachgrass_thatch_vertical_slab", () -> new ThatchVerticalSlabBlock(UAProperties.BEACHGRASS_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> PRISMARINE_ROD_BUNDLE = HELPER.createBlock("prismarine_rod_bundle", () -> new PrismarineRodBlock(Properties.copy(Blocks.PRISMARINE_BRICKS).sound(SoundType.METAL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> LUMINOUS_PRISMARINE = HELPER.createBlock("luminous_prismarine", () -> new ConduitFrameBlock(UAProperties.LUMINOUS_PRISMARINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> LUMINOUS_PRISMARINE_STAIRS = HELPER.createBlock("luminous_prismarine_stairs", () -> new StairBlock(() -> LUMINOUS_PRISMARINE.get().defaultBlockState(), UAProperties.LUMINOUS_PRISMARINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> LUMINOUS_PRISMARINE_SLAB = HELPER.createBlock("luminous_prismarine_slab", () -> new SlabBlock(UAProperties.LUMINOUS_PRISMARINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> LUMINOUS_PRISMARINE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "luminous_prismarine_vertical_slab", () -> new VerticalSlabBlock(UAProperties.LUMINOUS_PRISMARINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> SCUTE_BLOCK = HELPER.createBlock("scute_block", () -> new ScuteBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_SHINGLES = HELPER.createBlock("scute_shingles", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_SHINGLE_STAIRS = HELPER.createBlock("scute_shingle_stairs", () -> new StairBlock(() -> SCUTE_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_SHINGLE_SLAB = HELPER.createBlock("scute_shingle_slab", () -> new SlabBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_SHINGLE_WALL = HELPER.createBlock("scute_shingle_wall", () -> new WallBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> SCUTE_SHINGLE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "scute_shingle_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(SCUTE_SHINGLES.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CHISELED_SCUTE_SHINGLES = HELPER.createBlock("chiseled_scute_shingles", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_PAVEMENT = HELPER.createBlock("scute_pavement", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_PAVEMENT_STAIRS = HELPER.createBlock("scute_pavement_stairs", () -> new StairBlock(() -> SCUTE_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_PAVEMENT_SLAB = HELPER.createBlock("scute_pavement_slab", () -> new SlabBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SCUTE_PAVEMENT_WALL = HELPER.createBlock("scute_pavement_wall", () -> new WallBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> SCUTE_PAVEMENT_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "scute_pavement_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(SCUTE_PAVEMENT.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> DEAD_ACAN_CORAL_BLOCK = HELPER.createBlock("dead_acan_coral_block", () -> new InjectedBlock(Blocks.DEAD_HORN_CORAL_BLOCK.asItem(), UAProperties.DEAD_CORAL_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> DEAD_FINGER_CORAL_BLOCK = HELPER.createBlock("dead_finger_coral_block", () -> new InjectedBlock(Blocks.DEAD_HORN_CORAL_BLOCK.asItem(), UAProperties.DEAD_CORAL_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> DEAD_STAR_CORAL_BLOCK = HELPER.createBlock("dead_star_coral_block", () -> new InjectedBlock(Blocks.DEAD_HORN_CORAL_BLOCK.asItem(), UAProperties.DEAD_CORAL_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -290,27 +285,7 @@ public class UABlocks {
 	public static final RegistryObject<Block> ELDER_PRISMARINE_CORALSTONE_WALL = HELPER.createBlock("elder_prismarine_coralstone_wall", () -> new WallBlock(UAProperties.CORALSTONE), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> DEAD_CORALSTONE_WALL = HELPER.createBlock("dead_coralstone_wall", () -> new WallBlock(UAProperties.CORALSTONE), CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> BUBBLE_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "bubble_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{Blocks.BUBBLE_CORAL, Blocks.BUBBLE_CORAL_FAN, Blocks.BUBBLE_CORAL_WALL_FAN}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> HORN_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "horn_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{Blocks.HORN_CORAL, Blocks.HORN_CORAL_FAN, Blocks.HORN_CORAL_WALL_FAN}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> TUBE_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "tube_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{Blocks.TUBE_CORAL, Blocks.TUBE_CORAL_FAN, Blocks.TUBE_CORAL_WALL_FAN}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> BRAIN_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "brain_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{Blocks.BRAIN_CORAL, Blocks.BRAIN_CORAL_FAN, Blocks.BRAIN_CORAL_WALL_FAN}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> FIRE_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "fire_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{Blocks.FIRE_CORAL, Blocks.FIRE_CORAL_FAN, Blocks.FIRE_CORAL_WALL_FAN}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ACAN_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "acan_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{ACAN_CORAL.get(), ACAN_CORAL_FAN.get(), ACAN_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> FINGER_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "finger_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{FINGER_CORAL.get(), FINGER_CORAL_FAN.get(), FINGER_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STAR_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "star_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{STAR_CORAL.get(), STAR_CORAL_FAN.get(), STAR_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> MOSS_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "moss_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{MOSS_CORAL.get(), MOSS_CORAL_FAN.get(), MOSS_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PETAL_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "petal_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{PETAL_CORAL.get(), PETAL_CORAL_FAN.get(), PETAL_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> BRANCH_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "branch_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{BRANCH_CORAL.get(), BRANCH_CORAL_FAN.get(), BRANCH_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROCK_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "rock_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{ROCK_CORAL.get(), ROCK_CORAL_FAN.get(), ROCK_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PILLOW_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "pillow_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{PILLOW_CORAL.get(), PILLOW_CORAL_FAN.get(), PILLOW_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SILK_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "silk_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{SILK_CORAL.get(), SILK_CORAL_FAN.get(), SILK_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHROME_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "chrome_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{CHROME_CORAL.get(), CHROME_CORAL_FAN.get(), CHROME_CORAL_WALL_FAN.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PRISMARINE_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "prismarine_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, new Block[]{PRISMARINE_CORAL.get(), PRISMARINE_CORAL_FAN.get(), PRISMARINE_CORAL_WALL_FAN.get(), PRISMARINE_CORAL_SHOWER.get()}), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ELDER_PRISMARINE_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "elder_prismarine_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> DEAD_CORALSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "dead_coralstone_vertical_slab", () -> new CoralstoneVerticalSlabBlock(UAProperties.CORALSTONE, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-	public static final RegistryObject<Block> TONGUE_KELP = HELPER.createBlock("tongue_kelp", () -> new UAKelpBlock(KelpType.TONGUE, Properties.copy(Blocks.KELP)), CreativeModeTab.TAB_DECORATIONS);
+		public static final RegistryObject<Block> TONGUE_KELP = HELPER.createBlock("tongue_kelp", () -> new UAKelpBlock(KelpType.TONGUE, Properties.copy(Blocks.KELP)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> THORNY_KELP = HELPER.createBlock("thorny_kelp", () -> new UAKelpBlock(KelpType.THORNY, Properties.copy(Blocks.KELP)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> OCHRE_KELP = HELPER.createBlock("ochre_kelp", () -> new UAKelpBlock(KelpType.OCHRE, Properties.copy(Blocks.KELP)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POLAR_KELP = HELPER.createBlock("polar_kelp", () -> new UAKelpBlock(KelpType.POLAR, Properties.copy(Blocks.KELP)), CreativeModeTab.TAB_DECORATIONS);
@@ -329,57 +304,47 @@ public class UABlocks {
 	public static final RegistryObject<Block> KELPY_COBBLESTONE_STAIRS = HELPER.createBlock("kelpy_cobblestone_stairs", () -> new StairBlock(() -> KELPY_COBBLESTONE.get().defaultBlockState(), Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KELPY_COBBLESTONE_SLAB = HELPER.createBlock("kelpy_cobblestone_slab", () -> new SlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KELPY_COBBLESTONE_WALL = HELPER.createBlock("kelpy_cobblestone_wall", () -> new WallBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KELPY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "kelpy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KELPY_STONE_BRICKS = HELPER.createBlock("kelpy_stone_bricks", () -> new Block(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KELPY_STONE_BRICK_STAIRS = HELPER.createBlock("kelpy_stone_brick_stairs", () -> new StairBlock(() -> KELPY_STONE_BRICKS.get().defaultBlockState(), Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KELPY_STONE_BRICK_SLAB = HELPER.createBlock("kelpy_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KELPY_STONE_BRICK_WALL = HELPER.createBlock("kelpy_stone_brick_wall", () -> new WallBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KELPY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "kelpy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> TONGUE_KELPY_COBBLESTONE = HELPER.createBlock("tongue_kelpy_cobblestone", () -> new Block(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_COBBLESTONE_STAIRS = HELPER.createBlock("tongue_kelpy_cobblestone_stairs", () -> new StairBlock(() -> TONGUE_KELPY_COBBLESTONE.get().defaultBlockState(), Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_COBBLESTONE_SLAB = HELPER.createBlock("tongue_kelpy_cobblestone_slab", () -> new SlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_COBBLESTONE_WALL = HELPER.createBlock("tongue_kelpy_cobblestone_wall", () -> new WallBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> TONGUE_KELPY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "tongue_kelpy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_STONE_BRICKS = HELPER.createBlock("tongue_kelpy_stone_bricks", () -> new Block(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_STONE_BRICK_STAIRS = HELPER.createBlock("tongue_kelpy_stone_brick_stairs", () -> new StairBlock(() -> TONGUE_KELPY_STONE_BRICKS.get().defaultBlockState(), Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_STONE_BRICK_SLAB = HELPER.createBlock("tongue_kelpy_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> TONGUE_KELPY_STONE_BRICK_WALL = HELPER.createBlock("tongue_kelpy_stone_brick_wall", () -> new WallBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> TONGUE_KELPY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "tongue_kelpy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> THORNY_KELPY_COBBLESTONE = HELPER.createBlock("thorny_kelpy_cobblestone", () -> new Block(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_COBBLESTONE_STAIRS = HELPER.createBlock("thorny_kelpy_cobblestone_stairs", () -> new StairBlock(() -> THORNY_KELPY_COBBLESTONE.get().defaultBlockState(), Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_COBBLESTONE_SLAB = HELPER.createBlock("thorny_kelpy_cobblestone_slab", () -> new SlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_COBBLESTONE_WALL = HELPER.createBlock("thorny_kelpy_cobblestone_wall", () -> new WallBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> THORNY_KELPY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "thorny_kelpy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_STONE_BRICKS = HELPER.createBlock("thorny_kelpy_stone_bricks", () -> new Block(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_STONE_BRICK_STAIRS = HELPER.createBlock("thorny_kelpy_stone_brick_stairs", () -> new StairBlock(() -> THORNY_KELPY_STONE_BRICKS.get().defaultBlockState(), Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_STONE_BRICK_SLAB = HELPER.createBlock("thorny_kelpy_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> THORNY_KELPY_STONE_BRICK_WALL = HELPER.createBlock("thorny_kelpy_stone_brick_wall", () -> new WallBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> THORNY_KELPY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "thorny_kelpy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> OCHRE_KELPY_COBBLESTONE = HELPER.createBlock("ochre_kelpy_cobblestone", () -> new Block(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_COBBLESTONE_STAIRS = HELPER.createBlock("ochre_kelpy_cobblestone_stairs", () -> new StairBlock(() -> OCHRE_KELPY_COBBLESTONE.get().defaultBlockState(), Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_COBBLESTONE_SLAB = HELPER.createBlock("ochre_kelpy_cobblestone_slab", () -> new SlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_COBBLESTONE_WALL = HELPER.createBlock("ochre_kelpy_cobblestone_wall", () -> new WallBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> OCHRE_KELPY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "ochre_kelpy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_STONE_BRICKS = HELPER.createBlock("ochre_kelpy_stone_bricks", () -> new Block(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_STONE_BRICK_STAIRS = HELPER.createBlock("ochre_kelpy_stone_brick_stairs", () -> new StairBlock(() -> OCHRE_KELPY_STONE_BRICKS.get().defaultBlockState(), Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_STONE_BRICK_SLAB = HELPER.createBlock("ochre_kelpy_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> OCHRE_KELPY_STONE_BRICK_WALL = HELPER.createBlock("ochre_kelpy_stone_brick_wall", () -> new WallBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> OCHRE_KELPY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "ochre_kelpy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final RegistryObject<Block> POLAR_KELPY_COBBLESTONE = HELPER.createBlock("polar_kelpy_cobblestone", () -> new Block(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_COBBLESTONE_STAIRS = HELPER.createBlock("polar_kelpy_cobblestone_stairs", () -> new StairBlock(() -> POLAR_KELPY_COBBLESTONE.get().defaultBlockState(), Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_COBBLESTONE_SLAB = HELPER.createBlock("polar_kelpy_cobblestone_slab", () -> new SlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_COBBLESTONE_WALL = HELPER.createBlock("polar_kelpy_cobblestone_wall", () -> new WallBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> POLAR_KELPY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "polar_kelpy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_STONE_BRICKS = HELPER.createBlock("polar_kelpy_stone_bricks", () -> new Block(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_STONE_BRICK_STAIRS = HELPER.createBlock("polar_kelpy_stone_brick_stairs", () -> new StairBlock(() -> POLAR_KELPY_STONE_BRICKS.get().defaultBlockState(), Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_STONE_BRICK_SLAB = HELPER.createBlock("polar_kelpy_stone_brick_slab", () -> new SlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> POLAR_KELPY_STONE_BRICK_WALL = HELPER.createBlock("polar_kelpy_stone_brick_wall", () -> new WallBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> POLAR_KELPY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "polar_kelpy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(Blocks.STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+	
 	public static final class UAProperties {
 		public static final BlockBehaviour.Properties DEAD_CORAL_BLOCK = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
 		public static final BlockBehaviour.Properties DEAD_CORAL = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().noCollission().instabreak();
@@ -508,25 +473,6 @@ public class UABlocks {
 		conversions.put(SILK_CORAL_BLOCK, SILK_CORALSTONE_WALL);
 		conversions.put(CHROME_CORAL_BLOCK, CHROME_CORALSTONE_WALL);
 		conversions.put(PRISMARINE_CORAL_BLOCK, PRISMARINE_CORALSTONE_WALL);
-	});
-
-	public static final Map<Supplier<Block>, Supplier<Block>> CORALSTONE_VERTICAL_SLAB_CONVERSION_MAP = Util.make(Maps.newHashMap(), (conversions) -> {
-		conversions.put(() -> Blocks.BUBBLE_CORAL_BLOCK, BUBBLE_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(() -> Blocks.HORN_CORAL_BLOCK, HORN_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(() -> Blocks.TUBE_CORAL_BLOCK, TUBE_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(() -> Blocks.BRAIN_CORAL_BLOCK, BRAIN_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(() -> Blocks.FIRE_CORAL_BLOCK, FIRE_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(ACAN_CORAL_BLOCK, ACAN_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(FINGER_CORAL_BLOCK, FINGER_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(STAR_CORAL_BLOCK, STAR_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(MOSS_CORAL_BLOCK, MOSS_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(PETAL_CORAL_BLOCK, PETAL_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(BRANCH_CORAL_BLOCK, BRANCH_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(ROCK_CORAL_BLOCK, ROCK_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(PILLOW_CORAL_BLOCK, PILLOW_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(SILK_CORAL_BLOCK, SILK_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(CHROME_CORAL_BLOCK, CHROME_CORALSTONE_VERTICAL_SLAB);
-		conversions.put(PRISMARINE_CORAL_BLOCK, PRISMARINE_CORALSTONE_VERTICAL_SLAB);
 	});
 
 	public static final Map<Supplier<Block>, Supplier<Block>> FALLABLES = Util.make(Maps.newHashMap(), (fallables) -> {

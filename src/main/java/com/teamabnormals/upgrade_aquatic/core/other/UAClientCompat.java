@@ -36,7 +36,6 @@ public class UAClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.BEACHGRASS_THATCH.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.BEACHGRASS_THATCH_SLAB.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.BEACHGRASS_THATCH_STAIRS.get(), CUTOUT);
-		ItemBlockRenderTypes.setRenderLayer(UABlocks.BEACHGRASS_THATCH_VERTICAL_SLAB.get(), CUTOUT);
 
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.ACAN_CORAL.get(), CUTOUT);
 		ItemBlockRenderTypes.setRenderLayer(UABlocks.FINGER_CORAL.get(), CUTOUT);

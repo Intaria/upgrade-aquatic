@@ -17,7 +17,6 @@ public class UACompat {
 		DataUtil.registerCompostable(UABlocks.BEACHGRASS_THATCH.get(), 0.65F);
 		DataUtil.registerCompostable(UABlocks.BEACHGRASS_THATCH_STAIRS.get(), 0.65F);
 		DataUtil.registerCompostable(UABlocks.BEACHGRASS_THATCH_SLAB.get(), 0.65F);
-		DataUtil.registerCompostable(UABlocks.BEACHGRASS_THATCH_VERTICAL_SLAB.get(), 0.65F);
 
 		DataUtil.registerCompostable(UABlocks.BLUE_PICKERELWEED.get(), 0.30F);
 		DataUtil.registerCompostable(UAItems.BOILED_BLUE_PICKERELWEED.get(), 0.30F);
@@ -60,7 +59,6 @@ public class UACompat {
 		DataUtil.registerFlammable(UABlocks.BEACHGRASS_THATCH.get(), 60, 20);
 		DataUtil.registerFlammable(UABlocks.BEACHGRASS_THATCH_STAIRS.get(), 60, 20);
 		DataUtil.registerFlammable(UABlocks.BEACHGRASS_THATCH_SLAB.get(), 60, 20);
-		DataUtil.registerFlammable(UABlocks.BEACHGRASS_THATCH_VERTICAL_SLAB.get(), 60, 20);
 	}
 
 }
