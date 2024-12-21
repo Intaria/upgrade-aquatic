@@ -34,30 +34,30 @@ public class UAItems {
 	public static final RegistryObject<Item> GLOW_SQUID_BUCKET = HELPER.createItem("glow_squid_bucket", () -> new GlowSquidBucketItem(() -> Fluids.WATER, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 	
 	public static final RegistryObject<Item> PRISMARINE_ROD = HELPER.createItem("prismarine_rod", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-	public static final RegistryObject<Item> BOILED_BLUE_PICKERELWEED = HELPER.createItem("boiled_blue_pickerelweed", () -> new BoiledPickerelweedItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.BLUE_PICKERELWEED), false));
-	public static final RegistryObject<Item> BOILED_PURPLE_PICKERELWEED = HELPER.createItem("boiled_purple_pickerelweed", () -> new BoiledPickerelweedItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.PURPLE_PICKERELWEED), true));
+	public static final RegistryObject<Item> BOILED_BLUE_PICKERELWEED = HELPER.createItem("boiled_blue_pickerelweed", () -> new BoiledPickerelweedItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.BLUE_PICKERELWEED), false));
+	public static final RegistryObject<Item> BOILED_PURPLE_PICKERELWEED = HELPER.createItem("boiled_purple_pickerelweed", () -> new BoiledPickerelweedItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.PURPLE_PICKERELWEED), true));
 
-	public static final RegistryObject<Item> PIKE = HELPER.createItem("pike", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.PIKE)));
-	public static final RegistryObject<Item> COOKED_PIKE = HELPER.createItem("cooked_pike", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.COOKED_PIKE)));
-	public static final RegistryObject<Item> LIONFISH = HELPER.createItem("lionfish", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.LIONFISH)));
-	public static final RegistryObject<Item> COOKED_LIONFISH = HELPER.createItem("cooked_lionfish", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.COOKED_LIONFISH)));
-	public static final RegistryObject<Item> PERCH = HELPER.createItem("perch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.PERCH)));
-	public static final RegistryObject<Item> COOKED_PERCH = HELPER.createItem("cooked_perch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.COOKED_PERCH)));
-
+	public static final RegistryObject<Item> PIKE = HELPER.createItem("pike", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.PIKE)));
+	public static final RegistryObject<Item> COOKED_PIKE = HELPER.createItem("cooked_pike", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.COOKED_PIKE)));
+	public static final RegistryObject<Item> LIONFISH = HELPER.createItem("lionfish", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.LIONFISH)));
+	public static final RegistryObject<Item> COOKED_LIONFISH = HELPER.createItem("cooked_lionfish", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.COOKED_LIONFISH)));
+	public static final RegistryObject<Item> PERCH = HELPER.createItem("perch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.PERCH)));
+	public static final RegistryObject<Item> COOKED_PERCH = HELPER.createItem("cooked_perch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(UAFoods.COOKED_PERCH)));
+	
 	public static final RegistryObject<ForgeSpawnEggItem> NAUTILUS_SPAWN_EGG = HELPER.createSpawnEggItem("nautilus", UAEntityTypes.NAUTILUS::get, 14596231, 16744272);
 	public static final RegistryObject<ForgeSpawnEggItem> PIKE_SPAWN_EGG = HELPER.createSpawnEggItem("pike", UAEntityTypes.PIKE::get, 4806944, 13002040);
 	public static final RegistryObject<ForgeSpawnEggItem> LIONFISH_SPAWN_EGG = HELPER.createSpawnEggItem("lionfish", UAEntityTypes.LIONFISH::get, 15281931, 16111310);
 	public static final RegistryObject<ForgeSpawnEggItem> PERCH_SPAWN_EGG = HELPER.createSpawnEggItem("perch", UAEntityTypes.PERCH::get, 7764021, 12555079);
 	
-	public static class Foods {
+	public static class UAFoods {
 		public static final FoodProperties PURPLE_PICKERELWEED = new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build();
 		public static final FoodProperties BLUE_PICKERELWEED = new FoodProperties.Builder().nutrition(2).saturationMod(0.0F).alwaysEat().build();
 
-		public static final FoodProperties PIKE = new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build();
+		public static final FoodProperties PIKE = new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
 		public static final FoodProperties COOKED_PIKE = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build();
-		public static final FoodProperties LIONFISH = new FoodProperties.Builder().effect(() -> new MobEffectInstance(MobEffects.POISON, 550, 3), 1.0F).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 320, 2), 1.0F).nutrition(2).saturationMod(0.3F).build();
+		public static final FoodProperties LIONFISH = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).effect(() -> new MobEffectInstance(MobEffects.POISON, 600, 3), 1.0F).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300, 2), 1.0F).build();
 		public static final FoodProperties COOKED_LIONFISH = new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build();
-		public static final FoodProperties PERCH = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build();
+		public static final FoodProperties PERCH = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
 		public static final FoodProperties COOKED_PERCH = new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).build();
 	}
 
